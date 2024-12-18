@@ -1,11 +1,23 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
+let pronoun = ["the", "our"];
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+let adj = ["great", "big"];
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+let noun = ["jogger", "racoon", "planet"];
+
+let ext = [".com", ".net", ".on", ".er"];
+
+for (const i in pronoun) { 
+  for (const j in adj) { 
+    for (const k in noun) {
+      for (const m in ext) { 
+        const hack = noun[k].endsWith(ext[m].slice(1)) ;
+        if (hack) {
+                    const tamaño = ext[m].length - 1;
+                    console.log(pronoun[i] + adj[j] + noun[k].slice(0, -tamaño) + ext[m]);
+                  } else {
+                    console.log(pronoun[i] + adj[j] + noun[k] + ext[m]);
+                  }
+      } 
+    }
+  }
+}
